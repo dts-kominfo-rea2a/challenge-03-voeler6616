@@ -21,17 +21,28 @@ const dataBelanjaan = [
 ];
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const listBelanjaan = () => {
-  for (const belanjaan of dataBelanjaan) {
-    console.log(`- ${belanjaan.nama} x ${belanjaan.kuantitas}`);
+const listBelanjaan = (arrData) => {
+  let listBelanja = [];
+
+  // for (const belanjaan of dataBelanjaan) {
+  //   listBelanja.push(`- ${belanjaan.nama} x ${belanjaan.kuantitas}`);
+  // }
+  for ( let counter = 0; counter < arrData.length; counter++ ) {
+    listBelanja.push(`- ${arrData[counter].nama} x ${arrData[counter].kuantitas}`);
   }
+  return listBelanja;
 };
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const totalBelanjaan = () => {
+const totalBelanjaan = ( price ) => {
   let total = 0;
-  for (const belanjaan of dataBelanjaan) {
-    let hargaBarang = belanjaan.harga * belanjaan.kuantitas;
+  // for (const belanjaan of dataBelanjaan) {
+  //   let hargaBarang = belanjaan.harga * belanjaan.kuantitas;
+
+  //   total += hargaBarang;
+  // }
+  for ( let counter = 0; counter < price.length; counter++ ) {
+    let hargaBarang = price[counter].harga * price[counter].kuantitas;
 
     total += hargaBarang;
   }
